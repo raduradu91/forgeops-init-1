@@ -1,7 +1,7 @@
 {
   "_copyright" : "Copyright 2019 ForgeRock ASLicensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions andlimitations under the License.",
   "name" : "OBIE Assets Payment Submission Route",
-  "baseURI" : "http://obie-rcs-mocks.psd2acceldemo.svc.cluster.local:8089",
+  "baseURI" : "http://obie-rcs-mocks.iss-forgerock.svc.cluster.local:8089",
   "condition" : "${matches(request.uri.path, '^/openbanking/v3.1/domestic-payments$')}",
   "capture" : [ "response", "request" ],
   "auditService" : {
@@ -52,7 +52,7 @@
     "name" : "AmService-OBIE",
     "type" : "AmService",
     "config" : {
-      "url" : "https://login.psd2acceldemo.fridam.aeet-forgerock.com",
+      "url" : "https://login.iss-forgerock.iss.eu",
       "realm" : "/openbanking",
       "ssoTokenHeader" : "iPlanetDirectoryPro",
       "version" : "6.5.1",
@@ -192,7 +192,7 @@
         "name" : "UserInfoVerificationFilter-OBIE",
         "type" : "UserInfoVerificationFilter",
         "config" : {
-          "userInfoURL" : "https://login.psd2acceldemo.fridam.aeet-forgerock.com/oauth2/realms/root/realms/openbanking/userinfo"
+          "userInfoURL" : "https://login.iss-forgerock.iss.eu/oauth2/realms/root/realms/openbanking/userinfo"
         }
       }, {
         "name" : "OAuth2ResourceServerFilter-OBIE",
@@ -205,7 +205,7 @@
             "name" : "token-resolver-1",
             "type" : "TokenIntrospectionAccessTokenResolver",
             "config" : {
-              "endpoint" : "https://login.psd2acceldemo.fridam.aeet-forgerock.com/oauth2/realms/root/realms/openbanking/introspect",
+              "endpoint" : "https://login.iss-forgerock.iss.eu/oauth2/realms/root/realms/openbanking/introspect",
               "providerHandler" : {
                 "type" : "Chain",
                 "config" : {
@@ -253,7 +253,7 @@
             "sub" : "${contexts.oauth2.accessToken.info.sub}",
             "tpp" : "${toString(contexts.oauth2.accessToken.info.client_id).concat(attributes.tppId)}",
             "Initiation" : "${attributes.initiation}",
-            "iss" : "http://login.psd2acceldemo.fridam.aeet-forgerock.com:80/oauth2/realms/root/realms/openbanking"
+            "iss" : "http://login.iss-forgerock.iss.eu:80/oauth2/realms/root/realms/openbanking"
           },
           "amService" : "AmService-OBIE"
         }

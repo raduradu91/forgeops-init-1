@@ -28,7 +28,7 @@
     "advancedOAuth2ClientConfig" : {
       "grantTypes" : [ "refresh_token", "client_credentials", "authorization_code" ],
       "updateAccessToken" : "vfWk_DdAHRhtJD2yLa9nJwXmctQ",
-      "sectorIdentifierUri" : "login.psd2acceldemo.fridam.aeet-forgerock.com",
+      "sectorIdentifierUri" : "login.iss-forgerock.iss.eu",
       "isConsentImplied" : false,
       "contacts" : [ ],
       "requestUris" : [ ],
