@@ -126,8 +126,8 @@ jhipster:
 # ===================================================================
 
 rsc-remote-host:    
-    am: https://login.iss-forgerock.iss.eu    
-    idm: https://openidm.iss-forgerock.iss.eu
+    am: http://openam    
+    idm: http://openidm
 
 application:
     am-username: demo

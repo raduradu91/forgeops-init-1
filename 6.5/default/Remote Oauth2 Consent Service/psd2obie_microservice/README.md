@@ -48,8 +48,8 @@ For some configuration you can change file for project at path:
 
 ### Application for test environment	"application-test.yml"
 * rsc-remote-host    
-    - **am: https://login.iss-forgerock.iss.eu**  -  this will point to AM application, it’s using to get JWK’s from URI. Note should use format protocol://address:{port}/openam
-    - **idm: https://openidm.iss-forgerock.iss.eu** - this will point to IDM application, it’s using to get/update Consent ID or payment Intent
+    - **am: http://openam**  -  this will point to AM application, it’s using to get JWK’s from URI. Note should use format protocol://address:{port}/openam
+    - **idm: http://openidm** - this will point to IDM application, it’s using to get/update Consent ID or payment Intent
 
 * application
     - **idm-header-username: admin** - This property will use in the header to access IDM resource at POST retrieve/update
@@ -82,7 +82,7 @@ For some configuration you can change file for project at path:
 	- Eg. https://obie-rcs-backend.iss-forgerock.iss.eu/api/rcs/consent/jwk_pub
 
 * Access openAM **{ENV}/XUI/#realms/%2Fopenbanking/applications-agents-remoteConsent/agents/edit/forgerock-rcs**
- 	 - Eg. https://login.iss-forgerock.iss.eu/XUI/#realms/%2Fopenbanking/applications-agents-remoteConsent/agents/edit/forgerock-rcs
+ 	 - Eg. http://openam/XUI/#realms/%2Fopenbanking/applications-agents-remoteConsent/agents/edit/forgerock-rcs
 * Or navigate to
 	 - OpenAm (login with admin) -> realms (openbanking) - > Applications -> Agents -> Remote Consent -> agents 
 	 - In  Public key selector  : JWKs (should be value)
